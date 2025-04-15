@@ -68,6 +68,4 @@ public class Imovel {
 
         return sb.toString();
     }
-
-
 }
