@@ -1,18 +1,17 @@
-## Getting Started
+# 🎓 Sistema de Avaliação de Aluno
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Este projeto é uma classe Java que simula o sistema de avaliação de um aluno com base nas notas de provas, exercícios, trabalho prático e controle de frequência. Ao final, determina se o aluno foi aprovado ou reprovado.
 
-## Folder Structure
+## 📋 Funcionalidades
 
-The workspace contains two folders by default, where:
+- Cálculo da média das notas de provas (60% da nota final)
+- Cálculo da média dos exercícios (20% da nota final)
+- Inclusão da nota de um trabalho prático (20% da nota final)
+- Registro da quantidade de faltas
+- Determinação da aprovação:
+  - Nota final maior ou igual a 60
+  - Frequência dentro do limite (máximo de 10 faltas)
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+## 🧱 Estrutura do Projeto
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+- `Aluno.java`: Classe principal que contém toda a lógica de cálculo de notas, frequência e avaliação de aprovação.
