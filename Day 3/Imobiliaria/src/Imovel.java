@@ -28,26 +28,45 @@ public class Imovel {
         valorDeAluguel += valorBeneficio;
     }
 
+    private boolean verificarNegativo(double valor) {
+        if (valor < 0) {
+            System.out.println("O valor não pode ser negativo.");
+            return false;
+        }
+        return true;
+    }
+
     public void inputBeneficios() {
         teclado = new Scanner(System.in);
-        System.out.println("Digite quantos beneficios o imovel possui: ");
+        System.out.print("Digite quantos benefícios o imóvel possui: ");
         int quantidadeBeneficios = teclado.nextInt();
-        if (quantidadeBeneficios > MAX_BENEFICIOS) {
+        teclado.nextLine(); // limpar o buffer
+
+        if (!verificarNegativo(quantidadeBeneficios)) return;
+
+        if (quantidadeBeneficios == 0) {
+            System.out.println("Nenhum benefício registrado.");
+            return;
+        } else if (quantidadeBeneficios > MAX_BENEFICIOS) {
             System.out.println("O número máximo de benefícios é " + MAX_BENEFICIOS);
             quantidadeBeneficios = MAX_BENEFICIOS;
         }
+
         arrayBeneficios = new String[quantidadeBeneficios];
-        System.out.println("Digite os beneficios do imovel: ");
         for (int i = 0; i < quantidadeBeneficios; i++) {
-            arrayBeneficios[i] = teclado.next();
-        }
-        while(quantidadeBeneficios > 0) {
-            System.out.println("Digite o valor do beneficio: ");
+            System.out.printf("Digite o nome do benefício %d: ", i + 1);
+            arrayBeneficios[i] = teclado.nextLine();
+
+            System.out.print("Digite o valor do benefício: ");
             double valorBeneficio = teclado.nextDouble();
+            teclado.nextLine(); // limpar buffer
+
+            if (!verificarNegativo(valorBeneficio)) return;
+
             gerarValorBeneficios(valorBeneficio);
-            quantidadeBeneficios--;
         }
     }
+
 
     public String relatorio() {
         StringBuilder sb = new StringBuilder();

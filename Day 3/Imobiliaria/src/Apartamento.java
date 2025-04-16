@@ -1,5 +1,22 @@
 public class Apartamento extends Imovel {
     private double taxaDesconto = 0.05;
+    private double taxaCondominio = 0.02; //Nao informado valor no enunciado mas cobrado funcionalidade, coloquei 2% como valor qualquer
+    private double taxaImobiliaria;
+
+    private void aplicarTaxaCondominio() {
+        valorDeAluguel += (valorDeAluguel * taxaCondominio);
+    }
+
+    @Override
+    public void inputBeneficios() {
+        super.inputBeneficios();
+        taxaImobiliaria = valorDeAluguel * 0.12;
+        aplicarTaxaCondominio();
+    }
+
+    public double getTaxaImobiliaria() {
+        return taxaImobiliaria;
+    }
 
     public Apartamento(double valorDeVenda, String endereco, int anoDeConstrucao) {
         super(valorDeVenda, endereco, anoDeConstrucao);

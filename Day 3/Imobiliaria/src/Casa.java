@@ -1,5 +1,17 @@
 public class Casa extends Imovel {
     private double taxaDesconto = 0.05;
+    private double taxaImobiliaria;
+
+
+    @Override
+    public void inputBeneficios() {
+        super.inputBeneficios();
+        taxaImobiliaria = valorDeAluguel * 0.12;
+    }
+
+    public double getTaxaImobiliaria() {
+        return taxaImobiliaria;
+    }
 
     protected void aplicarDesconto(){
         valorDeAluguel -= (valorDeAluguel * taxaDesconto);
