@@ -5,6 +5,7 @@ public class Imovel {
     protected double valorDeAluguel;
     protected String endereco;
     protected int anoDeConstrucao;
+    protected double taxaImobiliaria;
     protected double taxaDesconto = 0.05;
     protected final int MAX_DESCONTO = 30;
     protected final int MAX_BENEFICIOS = 100;
@@ -22,6 +23,21 @@ public class Imovel {
         this.valorDeVenda = valorDeVenda;
         this.endereco = endereco;
         this.anoDeConstrucao = anoDeConstrucao;
+    }
+
+    public  double getValorDeAluguel() {
+        return valorDeAluguel;
+    }
+
+    public double getTaxaImobiliaria() {
+        return 0.0; // padrão
+    }
+    public double getValorSolido() {
+        return valorDeAluguel + taxaImobiliaria;
+    }
+
+    protected int getAnoDeConstrucao() {
+        return anoDeConstrucao;
     }
 
     protected void gerarValorBeneficios(double valorBeneficio) {

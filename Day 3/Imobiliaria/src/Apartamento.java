@@ -1,10 +1,10 @@
 public class Apartamento extends Imovel {
-    private double taxaDesconto = 0.05;
     private double taxaCondominio = 0.02; //Nao informado valor no enunciado mas cobrado funcionalidade, coloquei 2% como valor qualquer
     private double taxaImobiliaria;
 
     private void aplicarTaxaCondominio() {
         valorDeAluguel += (valorDeAluguel * taxaCondominio);
+        valorDeAluguel -= taxaImobiliaria;
     }
 
     @Override
@@ -14,6 +14,7 @@ public class Apartamento extends Imovel {
         aplicarTaxaCondominio();
     }
 
+    @Override
     public double getTaxaImobiliaria() {
         return taxaImobiliaria;
     }
