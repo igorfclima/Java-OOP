@@ -17,7 +17,7 @@ public class Imobiliaria {
 
     static void cabecalho() {
         limparTela();
-        System.out.println("GESTAO DE IMÓVEIS v0.2\n================");
+        System.out.println("GESTAO DE IMÓVEIS v0.1\n================");
     }
 
     static void limparTela() {
