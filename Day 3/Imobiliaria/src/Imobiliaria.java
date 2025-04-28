@@ -14,6 +14,14 @@ public class Imobiliaria {
             imoveis = new Imovel[MAX_IMOVEIS];
         }
     }
+    static void menu() {
+        System.out.println("1 - Cadastrar Imóvel");
+        System.out.println("2 - Listar Imóveis");
+        System.out.println("3 - Listar Imóveis por Ano de Construção");
+        System.out.println("4 - Valor Total dos Imóveis");
+        System.out.println("5 - Sair");
+        System.out.print("Escolha uma opção: ");
+    }
 
     static void cabecalho() {
         limparTela();
@@ -127,10 +135,12 @@ public class Imobiliaria {
             taxaImobiliaria += imoveis[i].getTaxaImobiliaria();
         }
         System.out.println(String.format("Valor sólido: R$ %.2f", valorTotal));
-        System.out.println(String.format("Valor liquido: R$ %.2f", valorTotal + taxaImobiliaria));
+        System.out.println(String.format("Valor liquido: R$ %.2f", valorTotal - taxaImobiliaria));
     }
 
-    public void adicionarImovel(String escolha) {
+    public void adicionarImovel() {
+        limparTela();
+        cabecalho();
         Imovel imovel = cadastrarImovel();
 
         if (contadorImoveis < imoveis.length) {

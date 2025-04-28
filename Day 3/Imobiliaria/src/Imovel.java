@@ -10,6 +10,7 @@ public class Imovel {
     protected final int MAX_DESCONTO = 30;
     protected final int MAX_BENEFICIOS = 100;
     protected String[] arrayBeneficios;
+    protected int idadeImovel;
     Scanner teclado;
 
     public Imovel(double valorDeVenda, double valorDeAluguel, String endereco, int anoDeConstrucao) {

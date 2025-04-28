@@ -21,8 +21,9 @@ public class Apartamento extends Imovel {
 
     public Apartamento(double valorDeVenda, String endereco, int anoDeConstrucao) {
         super(valorDeVenda, endereco, anoDeConstrucao);
+        idadeImovel = 2025 - anoDeConstrucao;
         valorDeAluguel = valorDeVenda * 0.04;
-        while((2025 - anoDeConstrucao) >= 5 && taxaDesconto < MAX_DESCONTO) {
+        while(idadeImovel >= 5 && taxaDesconto <= MAX_DESCONTO) {
             aplicarDesconto();
         }
     }
@@ -30,6 +31,6 @@ public class Apartamento extends Imovel {
     protected void aplicarDesconto(){
         valorDeAluguel -= (valorDeAluguel * taxaDesconto);
         taxaDesconto += 0.04;
-        anoDeConstrucao += 5;
+        idadeImovel -= 5;
     }
 }
